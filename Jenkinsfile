@@ -5,8 +5,6 @@ pipeline {
       steps {
         sh '''mysqldump --all-databases --user=jenkins > all_databases.sql
 
-rm -R $( ls -I "*.sql" )
-
 touch storage/logs/laravel.log
 
 sudo chown -R jenkins:www-data storage/ bootstrap/
