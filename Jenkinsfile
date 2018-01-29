@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('shellb') {
       steps {
-        sh '''touch storage/logs/laravel.log
+        sh '''mysql dump
+
+touch storage/logs/laravel.log
 
 sudo chown -R jenkins:www-data storage/ bootstrap/
 
