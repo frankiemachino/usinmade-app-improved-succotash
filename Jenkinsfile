@@ -5,13 +5,14 @@ pipeline {
       steps {
         sh '''mysqldump --all-databases --user=jenkins > all_databases.sql
 
-php artisan down
 
 touch storage/logs/laravel.log
 
 sudo chown -R jenkins:www-data storage/ bootstrap/
 
 composer install
+
+php artisan down
 
 name=$JOB_NAME
 
